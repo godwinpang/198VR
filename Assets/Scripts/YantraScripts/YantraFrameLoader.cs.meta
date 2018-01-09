@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: 7848e99a273b549bd87819aaa65008e6
+timeCreated: 1515474070
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - m_CircleMarker: {instanceID: 0}
+  - m_SmallCircleMarker: {instanceID: 0}
+  - m_BackgroundRenderer: {instanceID: 0}
+  - m_ForegroundRenderer1: {instanceID: 0}
+  - m_ForegroundRenderer2: {instanceID: 0}
+  - foregroundFadeTool1: {instanceID: 0}
+  - foregroundFadeTool2: {instanceID: 0}
+  - fill1: {fileID: 2800000, guid: 8724dd683c3304e5fa4bdaf421870ad9, type: 3}
+  - fill2: {fileID: 2800000, guid: 7a77c1b71f6f4482386a465a5d98f59d, type: 3}
+  - fill3: {fileID: 2800000, guid: aca8bc27d3f5b44d09bf0362993de1c9, type: 3}
+  - fill4: {fileID: 2800000, guid: f032dcc0ca3cc42d4ae9f28e47f02967, type: 3}
+  - fill5: {fileID: 2800000, guid: 50dcfa672f7a049f98e883b6a9c45eb4, type: 3}
+  - fill6: {fileID: 2800000, guid: a5917c66056d94ab582e0363d0081e7e, type: 3}
+  - fill7: {fileID: 2800000, guid: eefc2b9a7c4cf42dcb4eed2fa5d1fa76, type: 3}
+  - fill8: {fileID: 2800000, guid: 59c078b1fd2f64448b2b2482fb19a22c, type: 3}
+  - fill9: {fileID: 2800000, guid: 5fa9536c300ec4ffeab614f975601f91, type: 3}
+  - circlesVertical: {fileID: 2800000, guid: ecd5816c48ae2494ca2f18ba14ad8e33, type: 3}
+  - circlesEnlightened: {fileID: 2800000, guid: 9ead9bb35cd7b484fbb0456a13b6e95e,
+      type: 3}
+  - m_FillLayerRenderer: {instanceID: 0}
+  - lowresYantraTexture: {fileID: 2800000, guid: cfd255448626e44dc97c949e1b54079e,
+      type: 3}
+  executionOrder: -500
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
