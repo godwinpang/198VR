@@ -1,10 +1,8 @@
 # SriYantraVR
 
-[Download Latest Build](https://github.com/Juwce/SriYantraVR/blob/master/latest%20build.apk)
-
-## Description
-
 Experience a guided Sri Yantra-based meditation in mobile VR.
+
+[Download Latest Build](https://github.com/Juwce/SriYantraVR/blob/master/latest%20build.apk)
 
 **Setup**
 
