@@ -21,9 +21,9 @@ public class YantraAnimator : MonoBehaviour {
 
 	private int[,] frameThresholdArray = new int[10, 2] {{0,29},{30,46},{47,55},{56,70},{71,81},{82,92},{93,101},{102,109},{110,110},{111,111}};
 
-	private int[,] timeThresholdArray = new int [10, 2];
+	private float[] timeThresholdArray = new float [10] {0f,140f,173f,193f,224.4f,247.7f,270.2f,0,0,0};
 
-	private int[] RRThresholdArray = new int [9];
+	//private int[] RRThresholdArray = new int [9];
 
 	private int level;
 
@@ -45,11 +45,8 @@ public class YantraAnimator : MonoBehaviour {
 	}
 
 	public void play() 
-	{		
-		//Debug.Log ("hello");
-		
+	{
 		catchUpToAudio ();
-		m_AudioSource.time = 140f;
 		m_AudioSource.Play();
 		animateEnabled = true;
 	}
@@ -67,6 +64,7 @@ public class YantraAnimator : MonoBehaviour {
 
 		animateEnabled = false;
 		nextFrame = 0;
+		level = 1;
 
 		m_AudioSource.Pause ();
 		m_AudioSource.time = audioStartTime;
@@ -76,6 +74,24 @@ public class YantraAnimator : MonoBehaviour {
 	public bool isAnimating() 
 	{
 		return animateEnabled;
+	}
+
+	public void toNextLevel(){
+		Debug.Log ("toNextLevel");
+		Debug.Log ("prevLevel" + level);
+		if (level<9){
+			level++;
+		}
+		Debug.Log ("nextLevel" + level);
+	}
+
+	public void toPreviousLevel(){
+		Debug.Log ("toPrevLevel");
+		Debug.Log ("prevLevel" + level);
+		if (level > 0) {
+			level--;
+		}
+		Debug.Log ("nextLevel" + level);
 	}
 
 	private void loadFrames() 
@@ -88,21 +104,24 @@ public class YantraAnimator : MonoBehaviour {
 	// play the next frame, if it's ready
 	private void animate() 
 	{
-		/* pseudocode for levels */
+		/* placeholder code for level progression based on heartrate */
 		//if (nextLevelMet (heartbeat) || frameReady (nextLevelFirstFrame)) {
 			
 		//}
+
 		if (!frameExists (nextFrame) || !frameReady (nextFrame)) {
 			return;
 		}
 
 		Debug.Log ("nextFrame:" + nextFrame);
-		if (nextFrame < 30)
-			nextFrame = 30;
-		if (nextFrame > 46) {
-			nextFrame = 30;
-			m_AudioSource.time = 140f;
+
+		if (nextFrame < frameThresholdArray [level, 0] || nextFrame > frameThresholdArray [level, 1]) {
+			if (nextFrame > 0)
+				hideFrame (nextFrame - 1);
+			nextFrame = frameThresholdArray [level, 0];
+			m_AudioSource.time = timeThresholdArray [level];
 		}
+
 		Debug.Log ("nextFrame after:" + nextFrame);
 
 		if (nextFrame > 0)
@@ -125,7 +144,7 @@ public class YantraAnimator : MonoBehaviour {
 	// true if frame exists and audio has progressed past timestamp
 	private bool frameReady(int frame)
 	{
-		Debug.Log (m_AudioSource.time);
+		//Debug.Log (m_AudioSource.time);
 		return m_AudioSource.time >= animationFrames [frame].timestamp;
 	}
 		
